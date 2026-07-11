@@ -1,15 +1,11 @@
-//JavaScript code base
+// JavaScript code base
 
-
-
-
-
-(function($) {
+(function ($) {
     "use strict";
 
     // Spinner
-    var spinner = function() {
-        setTimeout(function() {
+    var spinner = function () {
+        setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
@@ -23,7 +19,7 @@
 
 
     // Sticky Navbar
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.sticky-top').addClass('shadow-sm').css('top', '0px');
         } else {
@@ -33,15 +29,15 @@
 
 
     // Back to top button
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
     });
-    $('.back-to-top').click(function() {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    $('.back-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -61,8 +57,7 @@
         dots: true,
         loop: true,
         nav: false,
-        items: 1,
-        dotsData: true,
+        dotsData: true
     });
 
 
@@ -94,16 +89,14 @@
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
     });
-    $('#portfolio-flters li').on('click', function() {
+    $('#portfolio-flters li').on('click', function () {
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
+
 })(jQuery);
 
 
-
 /* JavaScript END */
-
-
